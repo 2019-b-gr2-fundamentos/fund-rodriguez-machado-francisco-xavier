@@ -1,10 +1,10 @@
-paquete principal
+paquete principal 
 
-importar (
-	" fmt "
+import (
+	"fmt"
 )
 
-/ *
+/*
 Autor: Francisco Rodriguez
 Fecha actializacion: 22/10/2019
 Descripcion: Variables primitivas, mutables e inmutables que se utilizan en el lenguaje GO
@@ -36,22 +36,22 @@ Objetos inmutables GO:
 2.- booleanos
 3.- int
 4.- punteros
-* /
+*/
 
 func  main () {
 
 	// `var` se usa para declarar una o más variables.
-	var  una  secuencia = " inicial "
-	fmt. Impresión (a)
+	var  una  cadena = " iniciar"
+	fmt.Println(e)
 
 	// Puedes declarar múltiples variables en una línea.
-	var  f , d  int = 3 , 4
+	var  f , g  int = 3 , 4
 	fmt. Println (f, d)
 
 	// Ir infiere el tipo de las variables inicializadas.
-	var  h = verdadero
-	fmt. Impresión (h)
+	var  h = true
+	fmt. Println (h)
 
-	var  g  float64 = 36.98
-	fmt. Println (g)
+	var  i  float64 = 36.98
+	fmt. Println (i)
 }
