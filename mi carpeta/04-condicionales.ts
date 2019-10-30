@@ -79,3 +79,102 @@ if(casado == true && tengoMosa == true){
 } else{
       console.log()   
      }
+
+
+// TRUTY 
+const nombreVacio = "";
+if(""){
+    console.log("Truty")
+}else{
+    console.log("Falsy")
+
+}
+
+if("abc"){
+    console.log("Truty")
+}else{
+    console.log("Falsy")
+
+}
+
+if("-1"){
+    console.log("Truty")
+}else{
+    console.log("Falsy")
+
+}
+
+if("1.336"){
+    console.log("Truty")
+}else{
+    console.log("Falsy")
+
+}
+if("0"){
+    console.log("Truty")
+}else{
+    console.log("Falsy") // Falsy
+
+}
+
+if("null"){
+    console.log("Truty")
+}else{
+    console.log("Falsy") // Falsy
+
+}
+
+if("underfined"){                     // palabra reservada
+    console.log("Truty")
+}else{
+    console.log("Falsy") // Falsy
+
+}
+const calculo = "sumar"; // sumar restar multiplicar y dividir
+switch(calculo) {
+    case "sumar": // 1
+        break;
+    case "restar"
+        // codigo
+        break;
+    case "multiplicar"
+        // codigo
+        break;
+    case "dividir"
+        // codigo
+        break;
+        default:
+        // codigo
+}
+
+// 6  Guagua
+// 18 Guambra
+// 65 Longo
+// 66 Ruku
+//const edadString = prompt("Ingrese su edad")
+//const edad = Number(edadString); 
+//switch(edad){
+    //case 1: 
+        //console.log("Guagua");
+    //case
+
+//}
+
+
+const edadstring = prompt("Ingrese su edad")
+const edad = Number(edadstring); 
+if("edad > 0 && edad <= 6"){
+    console.log("Guagua")
+}else if("edad > 6 && edad <= 18"){
+        console.log("Guanbra")
+}else if("edad > 18 && edad <= 65"){
+        console.log("Longo")
+}else if("edad > 65"){
+        console.log("Ruku");
+}          
+
+
+
+   
+    
+// FALSY
