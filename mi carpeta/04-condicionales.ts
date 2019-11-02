@@ -79,8 +79,7 @@ if(casado == true && tengoMosa == true){
 }else{
       console.log()   
      }
-     
-     // TRUTY 
+
 const nombreVacio = "";
 if(""){
     console.log("Truty")
@@ -174,6 +173,12 @@ if("edad > 0 && edad <= 6"){
 
 
 
+<<<<<<< HEAD
 
 
 // FALSY 
+=======
+   
+    
+// FALSY
+>>>>>>> 77384a1574a7dd4c0fd837e8d111652dd02f0060
