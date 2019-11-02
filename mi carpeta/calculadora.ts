@@ -2,8 +2,6 @@
 /*
 Autor: Francisco Rodriguez
 Fecha de Actualización: 02-11-2019
-Fuente:
-https://developer.mozilla.org/es/docs/Web/JavaScript
 */
 console.log("Ingrese el numero de la operación que desea realizar");
 console.log("1. Suma")
