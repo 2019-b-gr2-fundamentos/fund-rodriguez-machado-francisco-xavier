@@ -31,7 +31,7 @@ func main(){
 	}
 }
 
-//  Programa para saber si llevas una vida saludable
+//  Programa para saber si llevas una vida saludable //
 
 package main
 
