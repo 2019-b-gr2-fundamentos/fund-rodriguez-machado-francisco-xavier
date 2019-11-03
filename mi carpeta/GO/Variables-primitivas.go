@@ -9,3 +9,4 @@ Variables primitivas:
 3.- comple (x64 y x128) --- Ej: Números complejos con float32 / 64 partes reales e imaginarias
 4.- Flotador (64 y 32) - sirve para la escritura de número decimales Ej: 2.0110 3.1014 5.104 
 5.- Booleano - da un valor que puede ser verdero o falso
+*/
