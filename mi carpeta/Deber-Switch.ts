@@ -7,9 +7,9 @@ console.log("1. Es una persona muy joven edad de entre 7 a 12 años");
 console.log("2. Es una persona joven de entre 12 a 16 años");
 console.log("3. Es una persona un poco joven de entre 16 a 30 años");
 console.log("4. Es una persona ya no joven de 30 años en adelante");
-const edadString = prompt("Digite la opcion que corresponda al rango de su edad");
-const edad = Number(edadString);
-switch (edad) {
+const edad5String = prompt("Digite la opcion que corresponda al rango de su edad");
+const edad5 = Number(edad5String);
+switch (edad5) {
     case (1):
         console.log(" A usted por lo general le gusta jugar con sus amigos");
         console.log(" Es una persona Sociable");
@@ -66,15 +66,15 @@ const amor = Number(amorString);
 switch (amor) {
     case (1):
         console.log("El o Ella esta super hiper mega interesad@s en ti")
-        console.log("Aprobecha esta oportunidad no la dejes ir papu")
+        console.log("Aprovecha esta oportunidad no la dejes ir papu")
         break;
     case (2):
         console.log("El o Ella esta super hiper interesad@s en ti")
-        console.log("Aprobecha esta oportunidad no la dejes ir papu")
+        console.log("Aprovecha esta oportunidad no la dejes ir papu")
         break;
     case (3):
         console.log("El o Ella esta super interesad@s en ti")
-        console.log("Aprobecha esta oportunidad no la dejes ir papu")
+        console.log("Aprovecha esta oportunidad no la dejes ir papu")
         break;
     case (4):
         console.log("El o Ella esta interesad@s en ti")
