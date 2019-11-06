@@ -54,3 +54,4 @@ switch(operación1){
     default: 
         console.log("Revise si la opción es correcta");
 }
+
