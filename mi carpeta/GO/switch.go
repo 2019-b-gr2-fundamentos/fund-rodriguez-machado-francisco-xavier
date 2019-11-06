@@ -4,8 +4,10 @@ import (
 	"fmt"
 )
 func main() {
-	fmt.Println("Ingrese su sueldo")
-     sueldo := 500  // <= aqui escribe el sueldo ganado cada mes
+	fmt.Println("Bienvenido")
+	fmt.Println ("Ingrese su sueldo")
+	var sueldo int
+	fmt.Scanln(&sueldo)
      switch sueldo{
      case 1200:
 	 fmt.Println("Resive todo su sueldo")
@@ -29,8 +31,11 @@ import (
 	"fmt"
 )
 func main() {
- musica := "Rock"    // <= aqui se escribe el genero del tipo de musica que le gusta escuchar
- switch musica{
+	fmt.Println("Bienvenido")
+	fmt.Println ("Su gusto musical")
+	var musica string
+	fmt.Scanln(&musica)
+	switch musica{
  case "Rock":
 	 fmt.Println("El Rock es uno los generos mas escuchados de todos los tiempos")
  case "Elecctronica":
@@ -59,8 +64,11 @@ import (
 	"fmt"
 )
 func main() {
- adivinaza := "Lacucaracha"    // <= aqui escriba su repuesta
- fmt.Println("Mi tía Cuca tiene una mala racha, ¿quién será esta muchacha")
+	fmt.Println("Bienvenido")
+	fmt.Println("Ingrese la respuesta a la siguiente adivinanza")
+	fmt.Println ("Mi tía Cuca tiene una mala racha, ¿quién será esta muchacha")
+	var adivinanza string
+	fmt.Scanln(&adivinanza)
  switch adivinanza{
  case "escarabajo":
 	 fmt.Println("La respuesta no es la correcta")
@@ -76,7 +84,10 @@ import (
 	"fmt"
 )
 func main() {
- amor := 10    // <= aqui escriba su el tiempo que se demora en responder en minutos ejemplo: 10 
+	fmt.Println("Bienvenido")
+	fmt.Println ("Ingrese el tiempo que se demora en responder en minutos ej: 10")
+	var amor int
+	fmt.Scanln(&amor)
  switch amor{
      case 10:
 	 fmt.Println("El o Ella esta super hiper mega interesad@s en ti")
