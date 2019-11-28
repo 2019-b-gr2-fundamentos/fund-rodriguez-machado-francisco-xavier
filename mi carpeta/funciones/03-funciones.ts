@@ -6,3 +6,4 @@ function eeer() {
     console.log();
 }
 log("hola");
+
