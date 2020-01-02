@@ -6,15 +6,52 @@ var arregloMatriz = [
     [],
 ];
 function compararMatriz(matrizUno, matrizDos) {
+    var esValido = tienenMatricesIgualesDimensiones(matrizUno, matrizDos);
+    if (esValido) {
+        // Comparar los valores
+        return tienenMismosValores(matrizUno, matrizDos);
+    }
+    else {
+        return false;
+    }
+}
+function tienenMismosValores(matrizUno, matrizDos) {
+    var primeraDimension = matrizUno.length;
+    var segundaDimension = matrizUno[0].length;
+    var banderaSonIguales = true;
+    for (var i = 0; i < primeraDimension; i++) {
+        for (var j = 0; j < segundaDimension; j++) {
+            var valorActualM1 = matrizUno[i][j];
+            var valorActualM2 = matrizDos[i][j];
+            if (valorActualM1 != valorActualM2) {
+                banderaSonIguales = false;
+            }
+        }
+    }
+    return banderaSonIguales;
+}
+function tienenMatricesIgualesDimensiones(matrizUno, matrizDos) {
     var matrizUnoPrimeraDimension = obtenerPrimeraDimension(matrizUno);
     var matrizUnoSegundaDimension = obtenerSegundaDimension(matrizUno);
     var matrizDosPrimeraDimension = obtenerPrimeraDimension(matrizDos);
     var matrizDosSegundaDimension = obtenerSegundaDimension(matrizDos);
-    console.log(matrizUnoPrimeraDimension);
-    console.log(matrizUnoSegundaDimension);
-    console.log(matrizDosPrimeraDimension);
-    console.log(matrizDosSegundaDimension);
-    return true;
+    var noHayFalsos = matrizUnoPrimeraDimension != false &&
+        matrizUnoSegundaDimension != false &&
+        matrizDosPrimeraDimension != false &&
+        matrizDosSegundaDimension != false;
+    if (noHayFalsos) {
+        var tienenIgualesDimensiones = matrizUnoPrimeraDimension == matrizDosPrimeraDimension &&
+            matrizUnoSegundaDimension == matrizDosSegundaDimension;
+        if (tienenIgualesDimensiones) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return false;
+    }
 }
 function obtenerPrimeraDimension(matrizUno) {
     // VALIDACIONES
@@ -70,14 +107,15 @@ function verificarTodosLosElementosDeUnArregloSonArreglo(arreglo) {
     return true;
 }
 function main() {
-    var matrizUno = [
-        [1, 2],
-        [3]
+    var x = [
+        [1, 2, 3],
+        [3, 3, 3]
     ];
-    var matrizDos = [
-        [1, 2],
-        [3, 4],
+    var y = [
+        [1, 2, 3],
+        [3, 4, 4],
     ];
-    compararMatriz(matrizUno, matrizDos);
+    var resultado = compararMatriz(x, y);
+    console.log('Resultado: ', resultado);
 }
 main();
