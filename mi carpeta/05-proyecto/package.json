@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "calculadora_fr": "^1.0.0",
     "librerias-f-r-m": "^1.0.0"
   }
 }
