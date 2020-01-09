@@ -1,6 +1,6 @@
 {
-  "name": "librerias-f-r-m",
-  "version": "1.0.0",
+  "name": "calculadora_fr",
+  "version": "1.8.0",
   "description": "Libreria de fundamentos ",
   "main": "index.js",
   "scripts": {
