@@ -1,0 +1,17 @@
+{
+  "name": "05-proyecto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "empezar": " (tsc index.ts || echo) && node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "calculadora_fr": "1.8.0",
+    "librerias-f-r-m": "^1.0.0",
+    "operaciones-basicas-calculadora": "1.3.0",
+    "libreria_operations": "^1.4.0"
+  }
+}

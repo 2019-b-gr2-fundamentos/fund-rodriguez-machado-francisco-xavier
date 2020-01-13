@@ -1,17 +1,24 @@
 // Funcion recursiva
-function imprimirMensajeMVeces(mensaje, numeroVeces) {
-    if (numeroVeces == 0) {
-        console.log('Se termino');
-    }
-    else {
-        console.log(mensaje);
-        var numeroMensajeVeces = numeroVeces - 1;
+/*function imprimirMensajeMVeces(
+    mensaje: string,
+    numeroVeces: number
+): void{
+    if(numeroVeces == 0){
+        console.log('Se termino')
+    }else{
+        console.log(mensaje)
+        const numeroMensajeVeces = numeroVeces - 1;
         imprimirMensajeMVeces(mensaje, numeroMensajeVeces);
     }
+    
+
+
 }
-function main() {
-    imprimirMensajeMVeces('hola', 3);
+//function main(){
+   // imprimirMensajeMVeces('hola', 3)
 }
+
+
 /*
 function imprimirArregloDeDiezElementos(arreglo: number[], numeroIndice: number){
     if(indice){
@@ -27,7 +34,8 @@ function imprimirArregloDeDiezElementos(arreglo: number[], numeroIndice: number)
    }
     }
 */
-var arregloDosDimensiones = [
+//   const arregloDosDimensiones =  
+[
     [1, 2, 3, 4],
     [5, 6, 7, 8] // indice y longitud 
 ];
@@ -39,18 +47,21 @@ var arregloDosDimensiones = [
 //arregloDosDimensiones[1][0] // 3
 //arregloDosDimensiones[1][1] // 4
 // return[0,0,]
-console.log(arregloDosDimensiones[0], length);
+/* console.log(arregloDosDimensiones[0], length);
 console.log(arregloDosDimensiones[1], length);
-var tamañoArreglo1 = (arregloDosDimensiones[0], length);
-var tamañoArreglo2 = (arregloDosDimensiones[1], length);
-var m = 0;
-var indice = arregloDosDimensiones[0][m];
-for (indice; indice <= arregloDosDimensiones[0].length; indice++) {
-    for (m != 0; m <= 3; m++) {
-        console.log([]);
-    }
-    console.log(indice);
+/*let tamañoArreglo1= (arregloDosDimensiones[0],length);
+let tamañoArreglo2= (arregloDosDimensiones[1],length);
+let m = 0;
+let indice = arregloDosDimensiones[0][m];
+let w = arregloDosDimensiones[];
+for(m!=0; m<=3; m++)
+for(indice; indice <= arregloDosDimensiones[0].length; indice ++){
+  for(m!=0; m<=3; m++){
+  }
+  console.log(indice)
+
 }
+*/
 //[0,0,1*7 + 2*6 + 3*5 + 4*4]
 // 1) definir el tamaño 
 // 2) repetir el calculo N veces (N = tamaño)
@@ -60,3 +71,16 @@ for (indice; indice <= arregloDosDimensiones[0].length; indice++) {
 // 3.4) 1er elemento + 1 = 2do elemento 1er arreglo
 // 3.5) ultimo elemento -1 = penultimo del 2do arreglo
 // 3.6) sumar los elementos
+// Escriba un programa que verifique si dos matrices son iguales
+// la matriz es de dimensiones n * m
+// "n" y "m" pueden ser iguales o distintas
+// n=2 y m=3
+function compararMatrices(matrizUno, matrizDos) {
+    return true;
+}
+compararMatrices([[2, 3], [3, 4], [2, 3], [3, 4]]); // true
+function valorN(fila) {
+    var indice;
+    for (indice != 0; indice <= []; indice++)
+        ;
+}
