@@ -28,7 +28,13 @@ function obtenerDatosAnimalPerrito(){  // Promesa
                 type: 'string',
                 name: 'nombre',
                 message: 'Puedes darme tu nombre?'
-            })
+            });
+            promesaNombre
+            .then(
+                (datos)=>{
+                    console.log('Nombre', datos);
+                }
+            )
         }
     )
     .catch(
