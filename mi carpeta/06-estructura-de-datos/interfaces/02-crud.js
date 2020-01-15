@@ -17,6 +17,18 @@ function obtenerDatosAnimalPerrito() {
     promesaEdad
         .then(function (datos) {
         console.log('datos', datos);
+        // 
+        // Codigo
+        //
+        var promesaNombre = prompts({
+            type: 'string',
+            name: 'nombre',
+            message: 'Puedes darme tu nombre?'
+        });
+        promesaNombre
+            .then(function (datos) {
+            console.log('Nombre', datos);
+        });
     })
         .catch(function (error) {
         console.log('Error', error);
