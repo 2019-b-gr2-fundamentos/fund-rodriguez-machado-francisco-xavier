@@ -5,7 +5,7 @@ import * as prompts from 'prompts';
 function main(){
     obtenerDatosAnimalPerrito();
 }
-function obtenerDatosAnimalPerrito(){
+function obtenerDatosAnimalPerrito(){  // Promesa
 
     // Paradigma de programacion 
 
@@ -21,6 +21,14 @@ function obtenerDatosAnimalPerrito(){
     .then(
         (datos)=>{
             console.log('datos', datos)
+            // 
+            // Codigo
+            //
+            const promesaNombre = prompts({
+                type: 'string',
+                name: 'nombre',
+                message: 'Puedes darme tu nombre?'
+            })
         }
     )
     .catch(
