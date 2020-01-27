@@ -159,12 +159,12 @@ function perros() {
                 {
                     type: 'text',
                     name: 'Raza',
-                    message: 'Inserte la raza del Perro'
+                    message: 'Ingrese la raza del Perro'
                 },
                 {
                     type: 'text',
                     name: 'Pais de origen',
-                    message: 'Inserte el pais de origen de su perro'
+                    message: 'Ingrese el pais de origen de su perro'
                 },
                 {
                     type: 'number',
