@@ -1,0 +1,16 @@
+[
+    {
+        "Raza": "Pastor Aleman",
+        "Pais": Alemania,
+        "Edad": "15",
+        "Precio": 200,
+        "color": "marron"
+    },
+    {
+        "Raza": "Husky",
+        "Pais": Siberia,
+        "Edad": "14",
+        "Precio": 350,
+        "color": "gris"
+    }
+]
