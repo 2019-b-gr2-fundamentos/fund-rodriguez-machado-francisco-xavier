@@ -1,6 +1,2 @@
-[
-    {
-        "id": 100,
-        "nombre" : "Pepito"
-    }
-]
+[{"id":1,"nombre":"as"},
+{"id":2,"nombre":"dd5"}]

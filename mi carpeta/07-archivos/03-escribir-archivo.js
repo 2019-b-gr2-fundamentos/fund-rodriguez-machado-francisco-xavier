@@ -1,6 +1,10 @@
-var fs = require('fs');
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var fs = require("fs");
 function escribirArvhivo(path, contenido) {
-    fs.writeFileSync(path, contenido, 'utf8' // CODIFICADOR
+    fs.writeFileSync(path, //PATH
+    contenido, // CONTENIDO
+    'utf8' // CODIFICADOR
     );
 }
 exports.escribirArvhivo = escribirArvhivo;

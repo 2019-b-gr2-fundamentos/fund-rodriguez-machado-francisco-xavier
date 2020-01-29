@@ -7,8 +7,52 @@ async function main(){
     const contenidoArchivo = leerArchivo(
         './ejemplo.txt'
     );
+    console.log('contenidoArchivo', contenidoArchivo)
+    // parsear -> texto -> Estructura de memoria
+    /*
+    {
+        "nombre" : "Francisco"
+    }
+    <universidad>
+    <facultad></facultad>
+    </universidad>
+    */
+   let arregloCargadoDeArchivo; // undifined
+   try{
+    arregloCargadoDeArchivo = JSON.parse(contenidoArchivo);
+   } catch (error){
+       arregloCargadoDeArchivo = [];
+       console.log('Error parseando archivo')
+       
+   }
+   let minimoId = -1
+   arregloCargadoDeArchivo.forEach(   // no envia nada y no devuelve nada
+    // itera
+       function(valorActual) {
+           const idActual = valorActual.id;
+           if(idActual> minimoId){
+               minimoId = idActual
+           }
+       
+   });
+   minimoId = minimoId + 1;
+   contador = minimoId;
+   /*try{
+       console.log('1');
+       console.log('2');
+       //SyntaxError
+    let a = 1;
+    let a = 2;
+    let a = 3; // ESTA MAL
+    console.log(12313121321321354154545646666666666666465456666666666666666666666666666666666666666666666666666666648768456454165465454564)
+    throw new ReferenceError("EL ARCHIVO ESTA MAL PARSEADO")
+    console.log('4');
+    console.log('5');
+   }catch(error){
+    console.log(':3');
+   }
+   */
     console.log('contenidoArchivo', contenidoArchivo);
-    const arregloCargadoDeArchivo = JSON.parse(contenidoArchivo);
     const arregloEstudiantes: Estudiante[]=arregloCargadoDeArchivo;
     const arregloPreguntas = [
         {
@@ -85,9 +129,10 @@ async function main(){
             );
             console.log(estudianteEncontrado);
 
-
-
-
+const arregloTexto = JSON.stringify(arregloEstudiantes);
+// JASON.stringify -> convertir objeto o arreglo en memoria
+console.log(arregloTexto);
+escribirArvhivo('./ejemplo.txt',arregloTexto)
 
 
 

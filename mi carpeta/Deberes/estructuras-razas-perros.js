@@ -134,8 +134,6 @@ function queDeseaHacer() {
 function leerRegistros() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            console.log('Registro de Perros:', Perros);
-            queDeseaHacer().then().catch();
             return [2 /*return*/];
         });
     });
