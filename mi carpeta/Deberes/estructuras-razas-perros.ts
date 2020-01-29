@@ -11,7 +11,7 @@ async function crearDatosPerros(){
         },
         {
             type: 'text',
-            name: 'Pais de origen',
+            name: 'Pais',
             message: 'Ingrese el pais de origen de su perro'
         },
         {
@@ -37,7 +37,7 @@ async function crearDatosPerros(){
         Pais: respuestaPreguntas.Pais,
         Edad: respuestaPreguntas.Edad,
         Precio: respuestaPreguntas.Precio,
-        Color: respuestaPreguntas.color
+        Color: respuestaPreguntas.Color
     };
 id = id + 1;
     Perros.push(nuevoRegistroPerros);
@@ -64,9 +64,9 @@ async function queDeseaHacer(){
         eliminarRegistro().then().catch();
 
     }else if(respuesta1 == 5){
-        console.log('ADIOS');
+        console.log('Hasta la vista perros');
     }else{
-        console.log('Elija una opcion valida');
+        console.log('Elija una opcion valida, no sea mudo');
         queDeseaHacer().then().catch();
     };
     return preguntas.respuestas;
@@ -108,25 +108,25 @@ async function editarRegistro(){
         Perros[idEncontrado].Pais = nuevoPais.newCountry;
     }else if(respuestaCampo == 'Edad'){
         const nuevaEdad = await prompts({
-            type: 'number',
+            type: 'text',
             name: 'newAge',
             message: 'Ingrese la edad de su perro'
         });
         Perros[idEncontrado].Edad = nuevaEdad.newAge;
-    }else if(respuestaCampo == 'precio'){
+    }else if(respuestaCampo == 'Precio'){
         const nuevoPrecio = await prompts({
             type: 'number',
             name: 'newPrice',
             message: 'Ingrese el nuevo precio de su mascota'
         });
         Perros[idEncontrado].Precio = nuevoPrecio.newPrice;
-    }else if(respuestaCampo == 'color'){
+    }else if(respuestaCampo == 'Color'){
         const nuevoColor = await prompts({
             type: 'text',
-            name: 'City',
-            message: 'Ingrese el nuevo Color'
+            name: 'newColor',
+            message: 'Ingrese el nuevo newColor'
         });
-        Perros[idEncontrado].Color = nuevoColor.color;
+        Perros[idEncontrado].Color = nuevoColor.newColor;
     }else{
         console.log('Ingrese un campo valido');
     };

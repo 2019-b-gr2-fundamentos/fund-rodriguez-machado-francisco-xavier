@@ -53,7 +53,7 @@ function crearDatosPerros() {
                         },
                         {
                             type: 'text',
-                            name: 'Pais de origen',
+                            name: 'Pais',
                             message: 'Ingrese el pais de origen de su perro'
                         },
                         {
@@ -81,7 +81,7 @@ function crearDatosPerros() {
                         Pais: respuestaPreguntas.Pais,
                         Edad: respuestaPreguntas.Edad,
                         Precio: respuestaPreguntas.Precio,
-                        Color: respuestaPreguntas.color
+                        Color: respuestaPreguntas.Color
                     };
                     id = id + 1;
                     Perros.push(nuevoRegistroPerros);
@@ -118,10 +118,10 @@ function queDeseaHacer() {
                         eliminarRegistro().then().catch();
                     }
                     else if (respuesta1 == 5) {
-                        console.log('ADIOS');
+                        console.log('Hasta la vista perros');
                     }
                     else {
-                        console.log('Elija una opcion valida');
+                        console.log('Elija una opcion valida, no sea mudo');
                         queDeseaHacer().then().catch();
                     }
                     ;
@@ -134,6 +134,8 @@ function queDeseaHacer() {
 function leerRegistros() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
+            console.log('Registro de Perros:', Perros);
+            queDeseaHacer().then().catch();
             return [2 /*return*/];
         });
     });
@@ -186,7 +188,7 @@ function editarRegistro() {
                 case 6:
                     if (!(respuestaCampo == 'Edad')) return [3 /*break*/, 8];
                     return [4 /*yield*/, prompts({
-                            type: 'number',
+                            type: 'text',
                             name: 'newAge',
                             message: 'Ingrese la edad de su perro'
                         })];
@@ -195,7 +197,7 @@ function editarRegistro() {
                     Perros[idEncontrado].Edad = nuevaEdad.newAge;
                     return [3 /*break*/, 13];
                 case 8:
-                    if (!(respuestaCampo == 'precio')) return [3 /*break*/, 10];
+                    if (!(respuestaCampo == 'Precio')) return [3 /*break*/, 10];
                     return [4 /*yield*/, prompts({
                             type: 'number',
                             name: 'newPrice',
@@ -206,15 +208,15 @@ function editarRegistro() {
                     Perros[idEncontrado].Precio = nuevoPrecio.newPrice;
                     return [3 /*break*/, 13];
                 case 10:
-                    if (!(respuestaCampo == 'color')) return [3 /*break*/, 12];
+                    if (!(respuestaCampo == 'Color')) return [3 /*break*/, 12];
                     return [4 /*yield*/, prompts({
                             type: 'text',
-                            name: 'City',
-                            message: 'Ingrese el nuevo Color'
+                            name: 'newColor',
+                            message: 'Ingrese el nuevo newColor'
                         })];
                 case 11:
                     nuevoColor = _a.sent();
-                    Perros[idEncontrado].Color = nuevoColor.color;
+                    Perros[idEncontrado].Color = nuevoColor.newColor;
                     return [3 /*break*/, 13];
                 case 12:
                     console.log('Ingrese un campo valido');
