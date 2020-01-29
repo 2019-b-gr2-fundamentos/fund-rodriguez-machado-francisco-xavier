@@ -118,10 +118,10 @@ function queDeseaHacer() {
                         eliminarRegistro().then().catch();
                     }
                     else if (respuesta1 == 5) {
-                        console.log('ADIOS');
+                        console.log('Hasta la vista perros');
                     }
                     else {
-                        console.log('Elija una opcion valida');
+                        console.log('Elija una opcion valida, no sea mudo');
                         queDeseaHacer().then().catch();
                     }
                     ;
