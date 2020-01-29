@@ -1,7 +1,8 @@
 export interface Perros{
     Raza: string,
     Pais: string,
-    edad: number,
+    Edad: number,
     Precio: number,
-    color: string
+    Color: string,
+    id : number
 }

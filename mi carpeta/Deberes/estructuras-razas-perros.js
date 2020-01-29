@@ -37,155 +37,224 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var prompts = require("./node_modules/prompts");
-function perros() {
+var id = 1;
+var Perros = [];
+function crearDatosPerros() {
     return __awaiter(this, void 0, void 0, function () {
-        function agregarPerros() {
-            return __awaiter(this, void 0, void 0, function () {
-                var informacionPerros;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0: return [4 /*yield*/, prompts(preguntas)];
-                        case 1:
-                            informacionPerros = _a.sent();
-                            arregloPerros.push(informacionPerros);
-                            opciones();
-                            return [2 /*return*/];
-                    }
-                });
-            });
-        }
-        function editarPerros() {
-            return __awaiter(this, void 0, void 0, function () {
-                var indice, caracteristicaAeditar, nuevoValor, perroElegido;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0: return [4 /*yield*/, prompts({
-                                type: 'number',
-                                name: 'indice',
-                                message: 'Inserte el indice del aspecto del perro que desea editar'
-                            })];
-                        case 1:
-                            indice = _a.sent();
-                            if (!(indice.indice < arregloPerros.length)) return [3 /*break*/, 6];
-                            return [4 /*yield*/, prompts({
-                                    type: 'text',
-                                    name: 'caracteristica',
-                                    message: '¿Que desea editar?'
-                                })];
-                        case 2:
-                            caracteristicaAeditar = _a.sent();
-                            if (!(caracteristicaAeditar.caracteristica == 'Raza'
-                                || caracteristicaAeditar.caracteristica == 'Pais de origen'
-                                || caracteristicaAeditar.caracteristica == 'edad'
-                                || caracteristicaAeditar.caracteristica == 'Precio'
-                                || caracteristicaAeditar.caracteristica == 'color')) return [3 /*break*/, 4];
-                            return [4 /*yield*/, prompts({
-                                    type: 'text',
-                                    name: 'valor',
-                                    message: '¿Que desea insertar?'
-                                })];
-                        case 3:
-                            nuevoValor = _a.sent();
-                            perroElegido = arregloPerros[indice.indice];
-                            switch (caracteristicaAeditar.caracteristica) {
-                                case 'Nombre':
-                                    perroElegido.Raza = nuevoValor.valor;
-                                    break;
-                                case 'Pais de origen':
-                                    perroElegido.Pais = nuevoValor.valor;
-                                    break;
-                                case 'edad':
-                                    perroElegido.edad = nuevoValor.valor;
-                                    break;
-                                case 'Precio':
-                                    perroElegido.Precio = nuevoValor.valor;
-                                    break;
-                                case 'color':
-                                    perroElegido.color = nuevoValor.valor;
-                                    break;
-                            }
-                            opciones();
-                            return [3 /*break*/, 5];
-                        case 4:
-                            console.log('La característica propuesta no existe');
-                            editarPerros();
-                            _a.label = 5;
-                        case 5: return [3 /*break*/, 7];
-                        case 6:
-                            console.log('El indice no existe, intentelo denuevo');
-                            editarPerros();
-                            _a.label = 7;
-                        case 7: return [2 /*return*/];
-                    }
-                });
-            });
-        }
-        function opciones() {
-            return __awaiter(this, void 0, void 0, function () {
-                var opciones;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0: return [4 /*yield*/, prompts({
-                                type: 'text',
-                                name: 'eleccion',
-                                message: 'Insertar nueva raza de perro --> 1 || Editar la raza ya existente--> 2 || eliminar --> 3 || salir -> 4 '
-                            })];
-                        case 1:
-                            opciones = _a.sent();
-                            switch (opciones.eleccion) {
-                                case '1':
-                                    agregarPerros();
-                                    break;
-                                case '2':
-                                    editarPerros();
-                                    break;
-                                case '3':
-                                    console.log(arregloPerros);
-                                    break;
-                                default:
-                                    console.log('la opcion no es valida, vuelvalo a intentar');
-                                    opciones();
-                                    break;
-                            }
-                            return [2 /*return*/];
-                    }
-                });
-            });
-        }
-        var arregloPerros, preguntas;
+        var preguntasPerros, respuestaPreguntas, nuevoRegistroPerros;
         return __generator(this, function (_a) {
-            arregloPerros = [];
-            preguntas = [
-                {
-                    type: 'text',
-                    name: 'Raza',
-                    message: 'Inserte la raza del Perro'
-                },
-                {
-                    type: 'text',
-                    name: 'Pais de origen',
-                    message: 'Inserte el pais de origen de su perro'
-                },
-                {
-                    type: 'number',
-                    name: 'edad',
-                    message: 'Ingrese los anios de vida de su perro'
-                },
-                {
-                    type: 'number',
-                    name: 'Precio',
-                    message: 'Ingrese el precio de su perro al momento de comprarlo, si es adoptado mejor'
-                },
-                {
-                    type: 'text',
-                    name: 'color',
-                    message: 'Ingrese el color del pelaje de su Perro'
-                }
-            ];
-            ;
-            agregarPerros();
+            switch (_a.label) {
+                case 0:
+                    preguntasPerros = [
+                        {
+                            type: 'text',
+                            name: 'Raza',
+                            message: 'Ingrese la raza del Perro'
+                        },
+                        {
+                            type: 'text',
+                            name: 'Pais de origen',
+                            message: 'Ingrese el pais de origen de su perro'
+                        },
+                        {
+                            type: 'number',
+                            name: 'Edad',
+                            message: 'Ingrese los anios de vida de su perro'
+                        },
+                        {
+                            type: 'number',
+                            name: 'Precio',
+                            message: 'Ingrese el precio de su perro al momento de comprarlo, si es adoptado mejor'
+                        },
+                        {
+                            type: 'text',
+                            name: 'Color',
+                            message: 'Ingrese el color del pelaje de su Perro'
+                        }
+                    ];
+                    return [4 /*yield*/, prompts(preguntasPerros)];
+                case 1:
+                    respuestaPreguntas = _a.sent();
+                    nuevoRegistroPerros = {
+                        id: id,
+                        Raza: respuestaPreguntas.Raza,
+                        Pais: respuestaPreguntas.Pais,
+                        Edad: respuestaPreguntas.Edad,
+                        Precio: respuestaPreguntas.Precio,
+                        Color: respuestaPreguntas.color
+                    };
+                    id = id + 1;
+                    Perros.push(nuevoRegistroPerros);
+                    queDeseaHacer().then().catch();
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+;
+function queDeseaHacer() {
+    return __awaiter(this, void 0, void 0, function () {
+        var preguntas, respuesta1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, prompts({
+                        type: 'text',
+                        name: 'respuestas',
+                        message: '¿Que desea hacer? \n 1-crear otro registro \n 2-leer los registros actuales \n 3-actualizar datos \n 4-eliminar registros \n 5-SALIR'
+                    })];
+                case 1:
+                    preguntas = _a.sent();
+                    respuesta1 = preguntas.respuestas;
+                    if (respuesta1 == 1) {
+                        crearDatosPerros().then().catch();
+                    }
+                    else if (respuesta1 == 2) {
+                        leerRegistros().then().catch();
+                    }
+                    else if (respuesta1 == 3) {
+                        editarRegistro().then().catch();
+                    }
+                    else if (respuesta1 == 4) {
+                        eliminarRegistro().then().catch();
+                    }
+                    else if (respuesta1 == 5) {
+                        console.log('ADIOS');
+                    }
+                    else {
+                        console.log('Elija una opcion valida');
+                        queDeseaHacer().then().catch();
+                    }
+                    ;
+                    return [2 /*return*/, preguntas.respuestas];
+            }
+        });
+    });
+}
+;
+function leerRegistros() {
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            console.log('Registro de Perros:', Perros);
+            queDeseaHacer().then().catch();
             return [2 /*return*/];
         });
     });
 }
-perros();
+;
+function editarRegistro() {
+    return __awaiter(this, void 0, void 0, function () {
+        var PerrosidAEditar, idEncontrado, queDeseaEditar, respuestaCampo, nuevaRaza, nuevoPais, nuevaEdad, nuevoPrecio, nuevoColor;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, prompts({
+                        type: 'number',
+                        name: 'id',
+                        message: 'Ingrese el id del perro cuya informacion desea editar'
+                    })];
+                case 1:
+                    PerrosidAEditar = _a.sent();
+                    idEncontrado = Perros.findIndex(function (valorActual) {
+                        return valorActual.id == PerrosidAEditar.id;
+                    });
+                    return [4 /*yield*/, prompts({
+                            type: 'text',
+                            name: 'campoAEditar',
+                            message: '¿Que campo desea editar?'
+                        })];
+                case 2:
+                    queDeseaEditar = _a.sent();
+                    respuestaCampo = queDeseaEditar.campoAEditar;
+                    if (!(respuestaCampo == 'Raza')) return [3 /*break*/, 4];
+                    return [4 /*yield*/, prompts({
+                            type: 'text',
+                            name: 'newRace',
+                            message: 'Ingrese el nombre de la nueva raza'
+                        })];
+                case 3:
+                    nuevaRaza = _a.sent();
+                    Perros[idEncontrado].Raza = nuevaRaza.newRace;
+                    return [3 /*break*/, 13];
+                case 4:
+                    if (!(respuestaCampo == 'Pais')) return [3 /*break*/, 6];
+                    return [4 /*yield*/, prompts({
+                            type: 'text',
+                            name: 'newCountry',
+                            message: 'Ingrese el nombre del pais que proviene su perro'
+                        })];
+                case 5:
+                    nuevoPais = _a.sent();
+                    Perros[idEncontrado].Pais = nuevoPais.newCountry;
+                    return [3 /*break*/, 13];
+                case 6:
+                    if (!(respuestaCampo == 'Edad')) return [3 /*break*/, 8];
+                    return [4 /*yield*/, prompts({
+                            type: 'number',
+                            name: 'newAge',
+                            message: 'Ingrese la edad de su perro'
+                        })];
+                case 7:
+                    nuevaEdad = _a.sent();
+                    Perros[idEncontrado].Edad = nuevaEdad.newAge;
+                    return [3 /*break*/, 13];
+                case 8:
+                    if (!(respuestaCampo == 'precio')) return [3 /*break*/, 10];
+                    return [4 /*yield*/, prompts({
+                            type: 'number',
+                            name: 'newPrice',
+                            message: 'Ingrese el nuevo precio de su mascota'
+                        })];
+                case 9:
+                    nuevoPrecio = _a.sent();
+                    Perros[idEncontrado].Precio = nuevoPrecio.newPrice;
+                    return [3 /*break*/, 13];
+                case 10:
+                    if (!(respuestaCampo == 'color')) return [3 /*break*/, 12];
+                    return [4 /*yield*/, prompts({
+                            type: 'text',
+                            name: 'City',
+                            message: 'Ingrese el nuevo Color'
+                        })];
+                case 11:
+                    nuevoColor = _a.sent();
+                    Perros[idEncontrado].Color = nuevoColor.color;
+                    return [3 /*break*/, 13];
+                case 12:
+                    console.log('Ingrese un campo valido');
+                    _a.label = 13;
+                case 13:
+                    ;
+                    console.log('El registro de los Perros actualizado es:', Perros);
+                    queDeseaHacer().then().catch();
+                    return [2 /*return*/, Perros];
+            }
+        });
+    });
+}
+;
+function eliminarRegistro() {
+    return __awaiter(this, void 0, void 0, function () {
+        var PerrosidAEliminar, idEncontrado;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, prompts({
+                        type: 'number',
+                        name: 'id',
+                        message: 'Ingrese el id del perro cuya informacion desea eliminar'
+                    })];
+                case 1:
+                    PerrosidAEliminar = _a.sent();
+                    idEncontrado = Perros.findIndex(function (valorActual) {
+                        return valorActual.id == PerrosidAEliminar.id;
+                    });
+                    Perros.splice(idEncontrado, 1);
+                    console.log('El nuevo registro de Perros es:', Perros);
+                    queDeseaHacer().then().catch();
+                    return [2 /*return*/, Perros];
+            }
+        });
+    });
+}
+function main() {
+    crearDatosPerros().then().catch();
+}
+main();
