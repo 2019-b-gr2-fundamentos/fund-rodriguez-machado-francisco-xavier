@@ -1,3 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var _02_filter_1 = require("./02-filter");
+var _05_Some_1 = require("./05-Some");
+var _04_forEach_1 = require("./04-forEach");
 function main() {
     var arregloEstudiantes = [
         { id: 1, nombre: "Francisco", nota: 10 },
@@ -74,6 +79,27 @@ function main() {
     );
     console.log('respuestaReduce', respuestaReduce);
     console.log('promedio', respuestaReduce / arregloEstudiantes.length);
+    console.log('arregloEstudiantes', arregloEstudiantes);
+    var respuestaFilterNuestro = _02_filter_1.filter(arregloEstudiantes, function (valorActual, i, arr) {
+        console.log('Valor:', valorActual);
+        console.log('Indice:', i);
+        console.log('Arreglo:', arr);
+        return valorActual.nota >= 7;
+    });
+    console.log('respuestaFilterNuestro', respuestaFilterNuestro);
+    console.log('arregloEstudiantes', arregloEstudiantes);
+    var respuestaSomeNuestro = _05_Some_1.some(arregloEstudiantes, function (valorActual, i, arr) {
+        console.log('Valor:', valorActual);
+        console.log('Indice:', i);
+        console.log('Arreglo:', arr);
+        return valorActual.nota <= 3;
+    });
+    console.log('respuestaSomeNuestro', respuestaSomeNuestro);
+    console.log('arregloEstudiantes', arregloEstudiantes);
+    var respuestaForEachNuestro = _04_forEach_1.forEach(arregloEstudiantes, function (valorActual, i, arr) {
+        console.log(valorActual.nota);
+    });
+    console.log('respuestaForEachNuestro', respuestaForEachNuestro);
     console.log('arregloEstudiantes', arregloEstudiantes);
 }
 main();
