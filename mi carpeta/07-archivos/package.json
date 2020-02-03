@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "prompts": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.0"
   }
 }
