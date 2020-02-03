@@ -1,6 +1,8 @@
-var fs = require('fs');
+"use strict";
+exports.__esModule = true;
+var fs = require("fs");
 function eliminarArchivo(path, id) {
-    var resultado = fs.eliminateFileSync(path, id, 'utf-8' // CODIFICACION
+    var resultado = fs.eliminarFileSync(path, id, 'utf-8' // CODIFICACION
     );
     return resultado;
 }

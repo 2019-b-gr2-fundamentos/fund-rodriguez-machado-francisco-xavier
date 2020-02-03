@@ -1,6 +1,7 @@
 import { leerArchivo } from "./02-leer-archivo";
 import { escribirArvhivo } from "./03-escribir-archivo";
 import { Estudiante } from "./estudiante.interface";
+import{ eliminar } from "./04-eliminar"
 import * as prompts from 'prompts';
 async function main(){
     let contador = 1;
@@ -145,5 +146,4 @@ contador = contador + 1
 console.log(textoLeido + nuevoContenido);
 */
 }
-
 main().then().catch();
