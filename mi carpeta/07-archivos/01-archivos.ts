@@ -132,7 +132,9 @@ async function main(){
 const arregloTexto = JSON.stringify(arregloEstudiantes);
 // JASON.stringify -> convertir objeto o arreglo en memoria
 console.log(arregloTexto);
-escribirArvhivo('./ejemplo.txt',arregloTexto)
+escribirArvhivo('./ejemplo.txt',arregloTexto);
+contador = contador + 1
+
 
 
 
