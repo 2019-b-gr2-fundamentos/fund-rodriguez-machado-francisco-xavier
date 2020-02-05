@@ -1,9 +1,11 @@
-import * as fs from 'fs'
+import * as fs from 'fs';
 
-export function escribirArvhivo(path: string, contenido: string){
+export function escribirArchivo(
+    path: string,
+    contenido: string){
     fs.writeFileSync(
-        path, //PATH
-        contenido,  // CONTENIDO
-        'utf8' // CODIFICADOR
-    );  
+        path, // PATH 
+        contenido, // contenido
+        'utf-8' // CODIFICACION
+    )
 }
