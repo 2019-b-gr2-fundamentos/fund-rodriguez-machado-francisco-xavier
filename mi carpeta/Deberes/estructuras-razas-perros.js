@@ -37,11 +37,25 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var prompts = require("./node_modules/prompts");
-var id = 1;
-var Perros = [];
+var _02_leer_archivo_1 = require("../../mi carpeta/07-archivos/02-leer-archivo");
+var _03_escribir_archivo_1 = require("C:/Users/USREPS/Documents/GitHub/fund-rodriguez-machado-francisco-xavier/mi carpeta/07-archivos/03-escribir-archivo");
+var id = 0;
+var contenidoArchivo = _02_leer_archivo_1.leerArchivo('C:/Users/USREPS/Documents/GitHub/fund-rodriguez-machado-francisco-xavier/mi carpeta/07-archivos/ejemplo.txt');
+var arregloPerrosCargadoDeArchivo = JSON.parse(contenidoArchivo);
+var minimoAid = 0;
+arregloPerrosCargadoDeArchivo
+    .forEach(function (valorActual) {
+    var idActual = valorActual.Pid;
+    if (idActual > minimoAid) {
+        minimoAid = idActual;
+    }
+});
+minimoAid = minimoAid + 1;
+id = minimoAid;
+var perrosArregloPropio = arregloPerrosCargadoDeArchivo;
 function crearDatosPerros() {
     return __awaiter(this, void 0, void 0, function () {
-        var preguntasPerros, respuestaPreguntas, nuevoRegistroPerros;
+        var preguntasPerros, respuestaPreguntas, nuevoRegistroPerros, perrosStringeado;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -81,10 +95,12 @@ function crearDatosPerros() {
                         Pais: respuestaPreguntas.Pais,
                         Edad: respuestaPreguntas.Edad,
                         Precio: respuestaPreguntas.Precio,
-                        Color: respuestaPreguntas.Color
+                        Color: respuestaPreguntas.Color,
                     };
                     id = id + 1;
-                    Perros.push(nuevoRegistroPerros);
+                    perrosArregloPropio.push(nuevoRegistroPerros);
+                    perrosStringeado = JSON.stringify(perrosArregloPropio);
+                    _03_escribir_archivo_1.escribirArchivo('C:/Users/USREPS/Documents/GitHub/fund-rodriguez-machado-francisco-xavier/mi carpeta/07-archivos/ejemplo.txt', perrosStringeado);
                     queDeseaHacer().then().catch();
                     return [2 /*return*/];
             }
@@ -134,7 +150,7 @@ function queDeseaHacer() {
 function leerRegistros() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            console.log('Registro de Perros:', Perros);
+            console.log('Registro de Perros:', perrosArregloPropio);
             queDeseaHacer().then().catch();
             return [2 /*return*/];
         });
@@ -153,7 +169,7 @@ function editarRegistro() {
                     })];
                 case 1:
                     PerrosidAEditar = _a.sent();
-                    idEncontrado = Perros.findIndex(function (valorActual) {
+                    idEncontrado = perrosArregloPropio.findIndex(function (valorActual) {
                         return valorActual.id == PerrosidAEditar.id;
                     });
                     return [4 /*yield*/, prompts({
@@ -172,7 +188,7 @@ function editarRegistro() {
                         })];
                 case 3:
                     nuevaRaza = _a.sent();
-                    Perros[idEncontrado].Raza = nuevaRaza.newRace;
+                    perrosArregloPropio[idEncontrado].Raza = nuevaRaza.newRace;
                     return [3 /*break*/, 13];
                 case 4:
                     if (!(respuestaCampo == 'Pais')) return [3 /*break*/, 6];
@@ -183,7 +199,7 @@ function editarRegistro() {
                         })];
                 case 5:
                     nuevoPais = _a.sent();
-                    Perros[idEncontrado].Pais = nuevoPais.newCountry;
+                    perrosArregloPropio[idEncontrado].Pais = nuevoPais.newCountry;
                     return [3 /*break*/, 13];
                 case 6:
                     if (!(respuestaCampo == 'Edad')) return [3 /*break*/, 8];
@@ -194,7 +210,7 @@ function editarRegistro() {
                         })];
                 case 7:
                     nuevaEdad = _a.sent();
-                    Perros[idEncontrado].Edad = nuevaEdad.newAge;
+                    perrosArregloPropio[idEncontrado].Edad = nuevaEdad.newAge;
                     return [3 /*break*/, 13];
                 case 8:
                     if (!(respuestaCampo == 'Precio')) return [3 /*break*/, 10];
@@ -205,7 +221,7 @@ function editarRegistro() {
                         })];
                 case 9:
                     nuevoPrecio = _a.sent();
-                    Perros[idEncontrado].Precio = nuevoPrecio.newPrice;
+                    perrosArregloPropio[idEncontrado].Precio = nuevoPrecio.newPrice;
                     return [3 /*break*/, 13];
                 case 10:
                     if (!(respuestaCampo == 'Color')) return [3 /*break*/, 12];
@@ -216,16 +232,16 @@ function editarRegistro() {
                         })];
                 case 11:
                     nuevoColor = _a.sent();
-                    Perros[idEncontrado].Color = nuevoColor.newColor;
+                    perrosArregloPropio[idEncontrado].Color = nuevoColor.newColor;
                     return [3 /*break*/, 13];
                 case 12:
                     console.log('Ingrese un campo valido');
                     _a.label = 13;
                 case 13:
                     ;
-                    console.log('El registro de los Perros actualizado es:', Perros);
+                    console.log('El registro de los Perros actualizado es:', perrosArregloPropio);
                     queDeseaHacer().then().catch();
-                    return [2 /*return*/, Perros];
+                    return [2 /*return*/, perrosArregloPropio];
             }
         });
     });
@@ -233,7 +249,7 @@ function editarRegistro() {
 ;
 function eliminarRegistro() {
     return __awaiter(this, void 0, void 0, function () {
-        var PerrosidAEliminar, idEncontrado;
+        var PerrosidAEliminar, idEncontrado, registroBorrado;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, prompts({
@@ -243,13 +259,15 @@ function eliminarRegistro() {
                     })];
                 case 1:
                     PerrosidAEliminar = _a.sent();
-                    idEncontrado = Perros.findIndex(function (valorActual) {
+                    idEncontrado = perrosArregloPropio.findIndex(function (valorActual) {
                         return valorActual.id == PerrosidAEliminar.id;
                     });
-                    Perros.splice(idEncontrado, 1);
-                    console.log('El nuevo registro de Perros es:', Perros);
+                    perrosArregloPropio.splice(idEncontrado, 1);
+                    registroBorrado = JSON.stringify(perrosArregloPropio);
+                    _03_escribir_archivo_1.escribirArchivo('C:/Users/USREPS/Documents/GitHub/fund-rodriguez-machado-francisco-xavier/mi carpeta/07-archivos/ejemplo.txt', registroBorrado);
+                    console.log('El nuevo registro de Perros es:', perrosArregloPropio);
                     queDeseaHacer().then().catch();
-                    return [2 /*return*/, Perros];
+                    return [2 /*return*/, perrosArregloPropio];
             }
         });
     });

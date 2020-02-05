@@ -1,0 +1,11 @@
+{
+  "name": "deber-juego",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "(tsc deber-juego.ts --target ES5 || echo) && node deber-juego.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
