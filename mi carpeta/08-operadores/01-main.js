@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var _02_filter_1 = require("./02-filter");
 var _05_Some_1 = require("./05-Some");
 var _04_forEach_1 = require("./04-forEach");
+var _03_map_1 = require("./03-map");
+var _06_Reduce_1 = require("./06-Reduce");
 function main() {
     var arregloEstudiantes = [
         { id: 1, nombre: "Francisco", nota: 10 },
@@ -100,6 +102,27 @@ function main() {
         console.log(valorActual.nota);
     });
     console.log('respuestaForEachNuestro', respuestaForEachNuestro);
+    console.log('arregloEstudiantes', arregloEstudiantes);
+    var repuestaNuestroMap = _03_map_1.map(arregloEstudiantes, function (valorActual, i, arr) {
+        var nuevoArreglo = {
+            id: valorActual.id,
+            nombre: valorActual.nombre,
+            notaProcesada: valorActual.nota * 2
+        };
+        return nuevoArreglo;
+    });
+    console.log('respuestaNuestroMap', repuestaNuestroMap);
+    console.log('arregloEstudiantes', arregloEstudiantes);
+    var respuestaNuestroReduce = _06_Reduce_1.reduce(arregloEstudiantes, function (acumulador, valorActual) {
+        var operacion = acumulador + valorActual.nota;
+        return operacion;
+    });
+    console.log('respuestaNuestroReduce', respuestaNuestroReduce);
+    console.log('arregloEstudiantes', arregloEstudiantes);
+    var respuestaNuestroEvery = arregloEstudiantes.every(function (valorActual, i, arr) {
+        return valorActual.nota <= 1;
+    });
+    console.log('RespuestaNuestroEvery: ', respuestaNuestroEvery);
     console.log('arregloEstudiantes', arregloEstudiantes);
 }
 main();
