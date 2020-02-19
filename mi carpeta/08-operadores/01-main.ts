@@ -1,6 +1,10 @@
 import { filter } from "./02-filter";
 import { some } from "./05-Some";
 import { forEach } from "./04-forEach";
+import { map } from './03-map';
+import { reduce } from "./06-Reduce"
+import { every } from "./07-every"
+
 
 function main(){
    const arregloEstudiantes: any = [
@@ -131,7 +135,35 @@ function main(){
     console.log('respuestaForEachNuestro', respuestaForEachNuestro);
     console.log('arregloEstudiantes', arregloEstudiantes);
 
+    const repuestaNuestroMap = map(arregloEstudiantes,
+        function(valorActual, i, arr){
+        const nuevoArreglo ={
+            id: valorActual.id,
+            nombre: valorActual.nombre,
+            notaProcesada: valorActual.nota*2
+        };
+        return nuevoArreglo;
+    }
+    );
+    console.log('respuestaNuestroMap', repuestaNuestroMap);
+    console.log('arregloEstudiantes', arregloEstudiantes);
 
+    const respuestaNuestroReduce = reduce(arregloEstudiantes,
+        function(acumulador, valorActual){ 
+            const operacion = acumulador + valorActual.nota;  
+            return operacion;
+        },
+    );
+    console.log('respuestaNuestroReduce', respuestaNuestroReduce);
+    console.log('arregloEstudiantes', arregloEstudiantes);
+
+    const respuestaNuestroEvery = arregloEstudiantes.every(
+        function(valorActual, i, arr){
+            return valorActual.nota <= 1;
+        }
+    );
+    console.log('RespuestaNuestroEvery: ', respuestaNuestroEvery)
+    console.log('arregloEstudiantes', arregloEstudiantes);
 
 }
 main();
